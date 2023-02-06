@@ -1,11 +1,11 @@
 import { Link as RouterLink } from "react-router-dom";
 import { AppBar, Toolbar, Link, Typography, Container, Stack, Divider } from "@mui/material";
-import { links } from "../../app.config";
+import ToggleThemeButton from "../ToggleThemeButton/ToggleThemeButton";
 
-const NavBar = () => {
+const NavBar = ({ links }) => {
 	return (
 		<>
-			<AppBar position="static" elevation={0} color={"transparent"}>
+			<AppBar position="fixed" elevation={0} color={"transparent"}>
 				<Container maxWidth="xl">
 					<Toolbar component={"header"} disableGutters>
 						<Typography
@@ -22,7 +22,7 @@ const NavBar = () => {
 						>
 							{"{cb}"}
 						</Typography>
-						<Stack direction={"row"} spacing={3} sx={{ mx: 2 }}>
+						<Stack direction={"row"} spacing={3} sx={{ mx: 2, display: { xs: "none", md: "flex" } }}>
 							{links.slice(1).map((link) => (
 								<Link underline="none" component={RouterLink} to={link.url} key={link.title} sx={{ color: "inherit" }}>
 									{link.title}
@@ -30,6 +30,7 @@ const NavBar = () => {
 							))}
 						</Stack>
 						<Divider orientation="vertical" variant="middle" flexItem sx={{ mx: 2 }} />
+						<ToggleThemeButton />
 					</Toolbar>
 				</Container>
 			</AppBar>
