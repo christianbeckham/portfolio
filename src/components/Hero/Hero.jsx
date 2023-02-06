@@ -1,61 +1,70 @@
-import { Link as RouterLink } from "react-router-dom";
-import { Box, Stack, Typography, Link, Divider } from "@mui/material";
-
-import { StyledHeader } from "./Hero.styled";
-import { links } from "../../app.config";
+import { useEffect, useState } from "react";
+import { Box, Stack, Typography, Link, Divider, Grow } from "@mui/material";
+import { social } from "../../app.config";
 
 const Hero = () => {
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
+
 	return (
-		<>
-			<StyledHeader>
-				{/* <Box
-					sx={{
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						border: "1px solid",
-						borderRadius: "100%",
-					}}
-				>
-					<Typography sx={{ m: 4 }}>{"{cb}"}</Typography>
-				</Box> */}
-				{/* <Box sx={{ height: 80 }}>
-					<Divider orientation="vertical" flexItem sx={{ height: "100%" }} />
-				</Box> */}
-				<br />
-				<Box sx={{ maxWidth: 950, width: "100%", borderStyle: "solid", borderWidth: "1px 0" }}>
+		<Box
+			component={"header"}
+			sx={{
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				textAlign: "center",
+				justifyContent: "center",
+				height: "100%",
+			}}
+		>
+			<Box sx={{ maxWidth: 950, width: "100%", borderStyle: "solid", borderWidth: "1px 0" }}>
+				<Grow in={isLoaded} {...{ timeout: 750 }}>
 					<Box sx={{ padding: "3rem", overflow: "hidden" }}>
 						<Typography variant="h1">Christian Beckham</Typography>
 						<Typography variant="h2">Software Engineer</Typography>
 					</Box>
-				</Box>
-				<Box sx={{ height: 80, display: { xs: "none", sm: "flex" } }}>
-					<Divider orientation="vertical" flexItem sx={{ height: "100%" }} />
-				</Box>
-				<Stack
-					component={"nav"}
-					direction={{ xs: "column", md: "row" }}
-					divider={<Divider orientation={{ xs: "horizontal", md: "vertical" }} variant="middle" flexItem />}
-					sx={{
-						display: { xs: "none", sm: "flex" },
-						border: "1px solid",
-						borderRadius: 1,
-					}}
-				>
-					{links.slice(1).map((link) => (
+				</Grow>
+			</Box>
+			<Box sx={{ height: 80, display: { xs: "none", sm: "flex" } }}>
+				<Divider orientation="vertical" flexItem sx={{ height: "100%" }} />
+			</Box>
+			<Stack
+				component={"nav"}
+				direction={"row"}
+				divider={<Divider orientation={"vertical"} variant="middle" flexItem />}
+				sx={{
+					border: "1px solid",
+					borderColor: "divider",
+					borderRadius: 1,
+					mt: { xs: 2, sm: 0 },
+				}}
+			>
+				{social.map((link, index) => (
+					<Grow key={link.title} in={isLoaded} {...{ timeout: 1000 + 500 * index }}>
 						<Link
-							key={link.title}
-							component={RouterLink}
-							to={link.url}
+							href={link.url}
+							target="_blank"
+							rel="noopener"
 							underline="none"
-							sx={{ letterSpacing: 0.2, textTransform: "uppercase", py: 3, px: 6 }}
+							sx={{
+								py: { xs: 2, md: 3 },
+								px: { xs: 4, sm: 5, md: 6 },
+								color: "inherit",
+							}}
 						>
-							{link.title}
+							<Stack alignItems={"center"} justifyContent={"center"} spacing={0.5}>
+								{link.icon}
+								<Typography sx={{ display: { xs: "none", sm: "flex" } }}>{link.title}</Typography>
+							</Stack>
 						</Link>
-					))}
-				</Stack>
-			</StyledHeader>
-		</>
+					</Grow>
+				))}
+			</Stack>
+		</Box>
 	);
 };
 
