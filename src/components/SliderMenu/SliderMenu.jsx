@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Box from "@mui/material/Box";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Menu from "@mui/icons-material/Menu";
+import {
+	Box,
+	SwipeableDrawer,
+	IconButton,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemIcon,
+	ListItemText,
+} from "@mui/material";
+import { Menu } from "@mui/icons-material";
 
 const SliderMenu = ({ links }) => {
 	const [open, setOpen] = useState(false);
