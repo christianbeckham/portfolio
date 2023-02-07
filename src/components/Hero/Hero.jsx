@@ -1,6 +1,6 @@
 import { Box, Stack, Typography, Link, Divider, SvgIcon } from "@mui/material";
 import LoadAnimation from "../LoadAnimation/LoadAnimation";
-import { social } from "../../app.config";
+import { myInfo, social } from "../../app.config";
 
 const Hero = () => {
 	return (
@@ -18,8 +18,8 @@ const Hero = () => {
 			<LoadAnimation>
 				<Box sx={{ maxWidth: 950, width: "100%", borderStyle: "solid", borderWidth: "1px 0" }}>
 					<Box sx={{ padding: "3rem", overflow: "hidden" }}>
-						<Typography variant="h1">Christian Beckham</Typography>
-						<Typography variant="h2">Software Engineer</Typography>
+						<Typography variant="h1">{`${myInfo.first_name} ${myInfo.last_name}`}</Typography>
+						<Typography variant="h2">{`${myInfo.title}`}</Typography>
 					</Box>
 				</Box>
 				<Box sx={{ height: 80, display: { xs: "none", sm: "flex" } }}>
