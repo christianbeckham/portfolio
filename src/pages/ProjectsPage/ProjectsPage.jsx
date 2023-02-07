@@ -15,7 +15,7 @@ const ProjectsPage = () => {
 				}}
 			>
 				<Typography variant={"h3"}>projects</Typography>
-				<Box sx={{ maxWidth: 950, borderStyle: "solid", borderWidth: "1px 0", p: 2 }}>
+				<Box sx={{ maxWidth: 950, borderStyle: "solid", borderWidth: "1px 0", my: 1, p: 2 }}>
 					<ProjectsList />
 				</Box>
 			</Box>
