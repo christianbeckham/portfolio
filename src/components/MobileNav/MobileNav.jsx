@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { Box, BottomNavigation, BottomNavigationAction, Toolbar } from "@mui/material";
 
 const MobileNav = ({ links }) => {
 	return (
@@ -17,6 +17,7 @@ const MobileNav = ({ links }) => {
 					))}
 				</BottomNavigation>
 			</Box>
+			<Toolbar />
 		</>
 	);
 };
