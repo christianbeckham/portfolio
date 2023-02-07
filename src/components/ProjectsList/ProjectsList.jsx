@@ -1,3 +1,4 @@
+import { Link as RouterLink } from "react-router-dom";
 import { Grid, Card, CardContent, CardActions, IconButton, Typography, Chip } from "@mui/material";
 import { GitHub, Launch } from "@mui/icons-material";
 import { projects } from "../../app.config";
@@ -24,12 +25,12 @@ const ProjectsList = () => {
 							</CardContent>
 							<CardActions>
 								{project.github_url && (
-									<IconButton size="small">
+									<IconButton size="small" component={RouterLink} to={project.github_url}>
 										<GitHub />
 									</IconButton>
 								)}
 								{project.app_url && (
-									<IconButton size="small">
+									<IconButton size="small" component={RouterLink} to={project.app_url}>
 										<Launch />
 									</IconButton>
 								)}
