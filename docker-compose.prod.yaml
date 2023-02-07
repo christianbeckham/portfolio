@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: portfolio-prod
+    image: portfolio-prod:1.0
+    build:
+      context: .
+      target: production
