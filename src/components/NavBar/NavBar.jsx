@@ -38,6 +38,7 @@ const NavBar = ({ links }) => {
 					</Toolbar>
 				</Container>
 			</AppBar>
+			<Toolbar />
 		</>
 	);
 };
