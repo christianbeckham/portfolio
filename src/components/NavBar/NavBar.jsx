@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Link, Typography, Container, Box, Stack, Divider } fro
 import ToggleThemeButton from "../ToggleThemeButton/ToggleThemeButton";
 import SliderMenu from "../SliderMenu/SliderMenu";
 import useResponsive from "../../hooks/useResponsive";
+import { myInfo } from "../../app.config";
 
 const NavBar = ({ links }) => {
 	const { isTablet } = useResponsive();
@@ -23,7 +24,7 @@ const NavBar = ({ links }) => {
 								textDecoration: "none",
 							}}
 						>
-							{"{cb}"}
+							{`{${myInfo.first_name.charAt(0).toLowerCase()}${myInfo.last_name.charAt(0).toLowerCase()}}`}
 						</Typography>
 						<Box sx={{ flexGrow: 1 }} />
 						<Stack direction={"row"} spacing={3} sx={{ mx: 2, display: { xs: "none", lg: "flex" } }}>
