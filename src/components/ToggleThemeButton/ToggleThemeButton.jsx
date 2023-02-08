@@ -11,8 +11,8 @@ const ToggleThemeButton = () => {
 
 	return (
 		<>
-			<IconButton onClick={toggleColorMode} color="inherit">
-				{theme.palette.mode === "dark" ? <LightMode /> : <Nightlight />}
+			<IconButton onClick={toggleColorMode} color="inherit" size="small">
+				{theme.palette.mode === "dark" ? <LightMode fontSize="inherit" /> : <Nightlight fontSize="inherit" />}
 			</IconButton>
 		</>
 	);
