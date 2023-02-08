@@ -1,5 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
-import { Grid, Card, CardContent, CardActions, IconButton, Typography, Chip } from "@mui/material";
+import { Grid, Box, Card, CardContent, CardActions, IconButton, Typography, Chip } from "@mui/material";
 import { GitHub, Launch } from "@mui/icons-material";
 import { projects } from "../../app.config";
 
@@ -17,11 +17,11 @@ const ProjectsList = () => {
 								<Typography sx={{ pb: 1.5 }} color="text.secondary">
 									{project.description}
 								</Typography>
-								<Typography variant="body2">
+								<Box>
 									{project.tech_stack.map((tech, index) => (
 										<Chip key={index} label={tech} variant="outlined" size="small" sx={{ mr: 0.5, mb: 0.5 }} />
 									))}
-								</Typography>
+								</Box>
 							</CardContent>
 							<CardActions>
 								{project.github_url && (
