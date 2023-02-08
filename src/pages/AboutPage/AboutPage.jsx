@@ -13,9 +13,12 @@ const AboutPage = () => {
 					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
+					py: { xs: 4, md: 0 },
 				}}
 			>
-				<Typography variant={"h3"}>about me</Typography>
+				<Typography variant={"h3"} sx={{ textTransform: "capitalize" }}>
+					about me
+				</Typography>
 				<Box sx={{ maxWidth: 950, borderStyle: "solid", borderWidth: "1px 0", my: 1, p: 4 }}>
 					<Typography variant="h5">{`Hello, I'm ${myInfo.first_name}! 👋`}</Typography>
 					<br />
