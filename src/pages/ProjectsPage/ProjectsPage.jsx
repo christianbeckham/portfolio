@@ -15,9 +15,12 @@ const ProjectsPage = () => {
 					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
+					py: { xs: 4, md: 0 },
 				}}
 			>
-				<Typography variant={"h3"}>projects</Typography>
+				<Typography variant={"h3"} sx={{ textTransform: "capitalize" }}>
+					projects
+				</Typography>
 				<Box sx={{ maxWidth: 950, borderStyle: "solid", borderWidth: "1px 0", my: 1, p: 2 }}>
 					<ProjectsList />
 				</Box>
