@@ -9,7 +9,7 @@ const NavBar = ({ links }) => {
 	const { isTablet } = useResponsive();
 	return (
 		<>
-			<AppBar position="fixed" elevation={0} color={"transparent"}>
+			<AppBar position="fixed" elevation={0} sx={{ bgcolor: "grey.900" }}>
 				<Container maxWidth="xl">
 					<Toolbar component={"header"} disableGutters>
 						{isTablet && <SliderMenu links={links} />}
@@ -29,7 +29,13 @@ const NavBar = ({ links }) => {
 						<Box sx={{ flexGrow: 1 }} />
 						<Stack direction={"row"} spacing={3} sx={{ mx: 2, display: { xs: "none", lg: "flex" } }}>
 							{links.slice(1).map((link) => (
-								<Link underline="none" component={RouterLink} to={link.url} key={link.title} sx={{ color: "inherit" }}>
+								<Link
+									underline="none"
+									component={RouterLink}
+									to={link.url}
+									key={link.title}
+									sx={{ color: "inherit", textTransform: "capitalize" }}
+								>
 									{link.title}
 								</Link>
 							))}
