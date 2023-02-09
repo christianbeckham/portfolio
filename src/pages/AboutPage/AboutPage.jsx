@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
 import LoadAnimation from "../../components/LoadAnimation/LoadAnimation";
 import TechList from "../../components/TechList/TechList";
 import { myInfo } from "../../app.config";
@@ -6,13 +6,12 @@ import { myInfo } from "../../app.config";
 const AboutPage = () => {
 	return (
 		<LoadAnimation>
-			<Box
+			<Container
 				component="main"
 				sx={{
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
-					justifyContent: "center",
 					py: { xs: 4, md: 0 },
 				}}
 			>
@@ -26,7 +25,7 @@ const AboutPage = () => {
 					<br />
 					<TechList />
 				</Box>
-			</Box>
+			</Container>
 		</LoadAnimation>
 	);
 };
