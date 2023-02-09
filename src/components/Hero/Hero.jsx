@@ -1,22 +1,20 @@
-import { Box, Stack, Typography, Link, Divider, SvgIcon } from "@mui/material";
+import { Container, Box, Stack, Typography, Link, Divider, SvgIcon } from "@mui/material";
 import LoadAnimation from "../LoadAnimation/LoadAnimation";
 import { myInfo, social } from "../../app.config";
 
 const Hero = () => {
 	return (
-		<Box
+		<Container
 			component={"header"}
 			sx={{
 				display: "flex",
 				flexDirection: "column",
 				alignItems: "center",
 				textAlign: "center",
-				justifyContent: "center",
-				height: "100%",
 			}}
 		>
 			<LoadAnimation>
-				<Box sx={{ maxWidth: 950, width: "100%", borderStyle: "solid", borderWidth: "1px 0" }}>
+				<Box sx={{ width: "100%", borderStyle: "solid", borderWidth: "1px 0" }}>
 					<Box sx={{ padding: "3rem", overflow: "hidden" }}>
 						<Typography variant="h1">{`${myInfo.first_name} ${myInfo.last_name}`}</Typography>
 						<Typography variant="h2">{`${myInfo.title}`}</Typography>
@@ -41,7 +39,7 @@ const Hero = () => {
 							<Link
 								href={link.url}
 								target="_blank"
-								rel="noopener"
+								rel="noopener noreferrer"
 								underline="none"
 								sx={{
 									py: { xs: 2, md: 3 },
@@ -58,7 +56,7 @@ const Hero = () => {
 					))}
 				</Stack>
 			</LoadAnimation>
-		</Box>
+		</Container>
 	);
 };
 
