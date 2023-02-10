@@ -9,7 +9,17 @@ const ProjectsList = () => {
 			<Grid container direction="row" spacing={2}>
 				{projects.map((project, index) => (
 					<Grid key={index} item xs={12} sm={6} md={4}>
-						<Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+						<Card
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+								height: "100%",
+								"&:hover": {
+									transform: "scale(1.05)",
+									transition: "transform 0.5s ease",
+								},
+							}}
+						>
 							<CardContent sx={{ flexGrow: 1 }}>
 								<Typography variant="h5" component="div">
 									{project.title}
