@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
 	Box,
+	Stack,
 	SwipeableDrawer,
 	IconButton,
 	List,
@@ -9,8 +10,9 @@ import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
+	Typography,
 } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Menu, Close } from "@mui/icons-material";
 
 const SliderMenu = ({ links }) => {
 	const [open, setOpen] = useState(false);
@@ -29,6 +31,12 @@ const SliderMenu = ({ links }) => {
 			</IconButton>
 			<SwipeableDrawer anchor={"left"} open={open} onClose={toggleDrawer} onOpen={toggleDrawer}>
 				<Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
+					<Stack direction={"row"} sx={{ alignItems: "center", justifyContent: "space-between", p: 2 }}>
+						<Typography variant="h6">Menu</Typography>
+						<IconButton color="inherit" onClick={toggleDrawer} edge="end" size="small">
+							<Close fontSize="inherit" />
+						</IconButton>
+					</Stack>
 					<List>
 						{links.map((link) => (
 							<ListItem key={link.title} disablePadding>
