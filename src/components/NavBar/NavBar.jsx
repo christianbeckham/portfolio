@@ -1,4 +1,4 @@
-import { Link as RouterLink } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 import { AppBar, Toolbar, Link, Typography, Container, Box, Stack, Divider } from "@mui/material";
 import ToggleThemeButton from "../ToggleThemeButton/ToggleThemeButton";
 import SliderMenu from "../SliderMenu/SliderMenu";
@@ -34,7 +34,15 @@ const NavBar = ({ links }) => {
 									component={RouterLink}
 									to={link.url}
 									key={link.title}
-									sx={{ color: "inherit", textTransform: "capitalize" }}
+									sx={{
+										color: "inherit",
+										textTransform: "capitalize",
+										borderBottom: "1px solid transparent",
+										"&.active": {
+											borderBottom: "1px solid",
+											transition: "transform 0.5s ease",
+										},
+									}}
 								>
 									{link.title}
 								</Link>
