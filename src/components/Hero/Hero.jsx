@@ -42,15 +42,22 @@ const Hero = () => {
 								rel="noopener noreferrer"
 								underline="none"
 								sx={{
-									py: { xs: 2, md: 3 },
-									px: { xs: 4, sm: 5, md: 6 },
 									color: "inherit",
 								}}
 							>
-								<Stack alignItems={"center"} justifyContent={"center"} spacing={0.5}>
+								<Box
+									sx={{
+										py: { xs: 2, md: 3 },
+										px: { xs: 4, sm: 5, md: 8 },
+										"&:hover": {
+											transform: "scale(1.1)",
+											transition: "transform 0.5s ease",
+										},
+									}}
+								>
 									<SvgIcon fontSize="large">{link.icon}</SvgIcon>
 									<Typography sx={{ display: { xs: "none", sm: "flex" } }}>{link.title}</Typography>
-								</Stack>
+								</Box>
 							</Link>
 						</LoadAnimation>
 					))}
