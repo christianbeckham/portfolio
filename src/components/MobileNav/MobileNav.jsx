@@ -1,4 +1,4 @@
-import { Link as RouterLink } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction, Toolbar, Paper } from "@mui/material";
 
 const MobileNav = ({ links }) => {
@@ -13,6 +13,13 @@ const MobileNav = ({ links }) => {
 							to={link.url}
 							label={link.title}
 							icon={link.icon}
+							sx={{
+								borderTop: "2px solid transparent",
+								"&.active": {
+									borderTop: "2px solid",
+									transition: "transform 0.5s ease",
+								},
+							}}
 						/>
 					))}
 				</BottomNavigation>
