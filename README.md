@@ -8,6 +8,8 @@ A minimalistic portfolio created with React and Material UI.
 
 These instructions will get the project up and running on your local machine for development and testing purposes.
 
+- Create a new file called app.config.js in the src folder and populate with your information (use the src/app.config.example.js file as reference)
+
 ### Prerequisites
 
 The things you need for this project.
