@@ -1,6 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import { Grid, Box, Card, CardContent, CardActions, IconButton, Typography, Chip } from "@mui/material";
-import { GitHub, Launch } from "@mui/icons-material";
+import { GitHub, Launch, PlayCircleOutline } from "@mui/icons-material";
 import { projects } from "../../app.config";
 
 const ProjectsList = () => {
@@ -42,6 +42,11 @@ const ProjectsList = () => {
 								{project.app_url && (
 									<IconButton size="small" component={RouterLink} to={project.app_url}>
 										<Launch />
+									</IconButton>
+								)}
+								{project.video_url && (
+									<IconButton size="small" component={RouterLink} to={project.video_url}>
+										<PlayCircleOutline />
 									</IconButton>
 								)}
 							</CardActions>
